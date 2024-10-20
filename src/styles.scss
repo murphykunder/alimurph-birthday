@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('assets/fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'StyleScript';
+    src: url('assets/fonts/Style_Script/StyleScript-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Mountains_of_Christmas_Regular';
+    src: url('assets/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Mountains_of_Christmas_Bold';
+    src: url('assets/fonts/Mountains_of_Christmas/MountainsofChristmas-Bold.ttf');
+}
+
+html, body {
+    margin: 0;
+}
