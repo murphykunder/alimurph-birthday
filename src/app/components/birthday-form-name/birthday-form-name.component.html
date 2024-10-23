@@ -1,0 +1,19 @@
+<div class="birthday-form-name">
+    <form [formGroup]="birthdayForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group mb-3">
+            <label class="form-label" for="from">From</label>
+            <input class="form-control" type="text" placeholder="Enter your name..." id="from" formControlName="from">
+            <app-form-field-error [control]="from" [isSubmitted]="isSubmitted"></app-form-field-error>
+        </div>
+        <div class="form-group mb-5">
+            <label class="form-label" for="to">To</label>
+            <input class="form-control" type="text" placeholder="Enter birthday person's name..." id="to" formControlName="to">
+            <app-form-field-error [control]="to" [isSubmitted]="isSubmitted"></app-form-field-error>
+        </div>
+        <div class="btn-next">
+            <button class="btn" type="submit">
+                Next&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>

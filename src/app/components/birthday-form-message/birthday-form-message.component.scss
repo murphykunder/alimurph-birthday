@@ -1,0 +1,39 @@
+.birthday-form-message {
+    width: 80%;
+    margin: auto;
+}
+
+:host ::ng-deep .ck .ck-placeholder {
+    font-size: var(--global-font-size);
+    font-family: var(--global-font-family);
+}
+
+:host ::ng-deep .ck-editor__editable_inline {
+    min-height: 200px;
+    font-family: var(--global-font-family);
+    font-size: var(--global-font-size);
+}
+
+.ckeditor + div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+.character-count {
+    font-size: 0.8em;
+    color: #fff;
+    font-weight: var(--global-font-weight);
+    letter-spacing: var(--global-letter-spacing);
+    margin-top: 0.25em;
+    text-wrap: nowrap;
+}
+
+@media (min-width:768px){
+
+    .character-count {
+        font-size: 0.9em;
+    }
+
+}

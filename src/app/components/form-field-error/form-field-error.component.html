@@ -1,0 +1,14 @@
+<ng-container *ngIf="control?.invalid && (control?.dirty || control?.touched || isSubmitted)">
+    <p *ngIf="control?.errors.required" class="form-field-error">
+        This is required
+    </p>
+    <p *ngIf="control?.errors.minlength" class="form-field-error">
+        Minimum {{ control?.errors.minlength.requiredLength }} characters are required
+    </p>
+    <p class="form-field-error" *ngIf="control?.errors.ckEditorMaxLength">
+        Maximum {{ control?.errors.ckEditorMaxLength.value }} characters are allowed
+    </p>
+    <p class="form-field-error" *ngIf="control?.value && control?.errors.ckEditorMinLength">
+        Minimum {{ control?.errors.ckEditorMinLength.value }} characters are required
+    </p>
+</ng-container>

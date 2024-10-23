@@ -1,0 +1,23 @@
+.birthday-form-name {
+    width: 80%;
+    margin: auto;
+}
+
+
+input {
+    font-family: var(--global-font-family);
+    font-size: var(--global-font-size);
+}
+
+input::placeholder{
+    font-size: var(--global-font-size);
+}
+
+@media (min-width:768px){
+
+    .birthday-form-name {
+        width: 70%;
+    }
+}
+
+

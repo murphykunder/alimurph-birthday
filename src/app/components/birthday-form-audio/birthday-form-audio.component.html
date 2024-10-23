@@ -1,0 +1,39 @@
+<div class="birthday-form-audio">
+    <form [formGroup]="birthdayForm" novalidate (ngSubmit)="onSubmit()">
+        <label class="form-label mb-3 text-justify">Select the birthday audio to play when the card loads</label>
+        <div class="audio-group mb-4">
+            <ng-container *ngFor="let audio of audioList; index as i">
+                <input type="radio"
+                    class="btn-check"
+                    name="audio"
+                    id="audio{{i}}"
+                    formControlName="audio"
+                    value="{{i}}"
+                    autocomplete="off"
+                    (change)="onAudioChange()"
+                >
+                <label class="label-audio" for="audio{{i}}">
+                    <h1>{{ audio.name }}</h1>
+                    <div id="waveform{{i}}" class="mt-2"></div>
+                    <div class="btn-waveform">
+                        <button class="btn icon"
+                            [class.play]="!isPlaying(i)"
+                            [class.pause]="isPlaying(i)" type="button"
+                            (click)="onPlayPause(i)"
+                            [disabled]="!isChecked(i)"
+                        >
+                        </button>
+                        <button class="btn stop" type="button" (click)="onStop(i)" [disabled]="!isChecked(i)">
+                            <i class="fa-solid fa-stop"></i>
+                        </button>
+                    </div>
+                </label>
+            </ng-container>
+        </div>
+        <div class="btn-next">
+            <button class="btn" type="submit">
+                Next&nbsp;&nbsp;<i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+</div>

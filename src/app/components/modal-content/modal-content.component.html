@@ -1,0 +1,19 @@
+<div class="modal-body">
+    <div class="label">
+        <h6>Send this link:</h6>
+        <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+    </div>
+    <div class="input-icon-group">
+        <input class="form-control" disabled type="text" id="cardUrl" [value]="cardUrl">
+        <button type="button" class="btn-copy" (click)="onCopy()"><i class="fa-regular fa-copy"></i></button>
+    </div>
+    <div class="text-copy-success"><p #copySuccessFlashMessage
+            *ngIf="copySuccess"
+            [class.animate]="copySuccess"
+        >Copied!</p></div>
+    <div class="text-center">
+        <small>
+            <i>(You can copy + paste the link in a browser to preview the card before sending to the birthday person)</i>
+        </small>
+    </div>
+</div>

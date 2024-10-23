@@ -1,0 +1,71 @@
+.birthday-form-audio {
+    width: 80%;
+    margin: auto;
+}
+
+form .audio-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.label-audio {
+    border: 1px solid #3b47ab;
+    border-radius: 5px;
+    padding: 0.8em;
+    background-color: #5262e7;
+    color: #fff;
+    opacity: 0.3;
+}
+
+.label-audio:hover{
+    background-color: transparent;
+}
+
+.btn-check:checked + .label-audio {
+    color: rgb(255, 255, 255);
+    background-color: #3a42c4;
+    border-color: none;
+    opacity: 1;
+}
+
+.label-audio > h1 {
+    font-family: var(--global-font-family);
+    font-size: var(--global-font-size);
+    font-weight: var(--global-font-weight);
+}
+
+.btn-waveform {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1em;
+    justify-content: space-evenly;
+}
+
+.btn-waveform button {
+    font-size: 0.8em;
+    padding: 0.3em 0.8em;
+}
+
+.btn-waveform .play::before {
+    font-family: 'Font Awesome 6 Free';
+    font: var(--fa-font-solid);
+    content: '\f04b';
+}
+
+.btn-waveform .pause::before {
+    font-family: 'Font Awesome 6 Free';
+    font: var(--fa-font-solid);
+    content: '\f04c';
+}
+
+@media (min-width:768px) {
+
+    .btn-waveform button {
+        padding: 0.3em 1em;
+    }
+
+    .birthday-form-audio {
+        width: 70%;
+    }
+}

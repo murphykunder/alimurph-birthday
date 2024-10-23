@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+@font-face {
+    font-family: 'JosefinSans';
+    src: url('assets/fonts/JosefinSans/JosefinSans-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'StyleScript';
+    src: url('assets/fonts/Style_Script/StyleScript-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Mountains_of_Christmas_Regular';
+    src: url('assets/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'Mountains_of_Christmas_Bold';
+    src: url('assets/fonts/Mountains_of_Christmas/MountainsofChristmas-Bold.ttf');
+}
+
+:root {
+    --global-font-family: 'JosefinSans';
+    --global-font-size: 0.9em;
+    --global-font-weight: 350;
+    --global-letter-spacing: 0.05em;
+    --global-primary-color: #444de2;
+    --global-secondary-color: #ffff00;
+    --global-tertiary-color: #fff;
+}
+
+html, body {
+    margin: 0;
+}
+
+// https://docs.fontawesome.com/web/add-icons/pseudo-elements
+.icon::before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width:768px){
+    :root {
+        --global-font-size: 1em;
+    }
+}

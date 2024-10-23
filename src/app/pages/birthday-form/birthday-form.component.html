@@ -1,0 +1,31 @@
+<div class="birthday-form-container">
+    <div class="birthday-form">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="progressbar">
+            <li [ngbNavItem]="1" class="active">
+                <ng-template ngbNavContent>
+                    <app-birthday-form-name [birthdayForm]="birthdayForm" (onNext)="onNext()"></app-birthday-form-name>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="2" [class.active]="active >= 2">
+                <ng-template ngbNavContent>
+                    <app-birthday-form-audio [birthdayForm]="birthdayForm" (onNext)="onNext()"></app-birthday-form-audio>
+                </ng-template>
+            </li>
+            <li [ngbNavItem]="3" [class.active]="active >= 3">
+                <ng-template ngbNavContent>
+                    <app-birthday-form-message
+                        [birthdayForm]="birthdayForm"
+                        [messageMaxLength]="messageMaxLength"
+                        [messageCharacterCount]="messageCharacterCount"
+                        (updateMessageCharacterCount)="updateMessageCharacterCount($event)"
+                        (createCard)="createCard()"
+                    />
+                </ng-template>
+            </li>
+        </ul>
+        <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    </div>
+    <div class="birthday-form-logo">
+        <img src="../../../assets/images/logo.jpg">
+    </div>
+</div>

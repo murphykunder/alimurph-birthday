@@ -1,0 +1,15 @@
+<div class="birthday-form-message">
+    <form [formGroup]="birthdayForm" novalidate (ngSubmit)="onSubmit()">
+        <label class="form-label" for="message">Your message: (Maximum {{ messageMaxLength }} characters allowed) </label>
+        <ckeditor class="ckeditor" [editor]="Editor" formControlName="message" id="message" [config]="config"></ckeditor>
+        <div>
+            <app-form-field-error [control]="message" [isSubmitted]="isSubmitted"></app-form-field-error>
+            <p class="character-count">Characters: {{ messageCharacterCount }}</p>
+        </div>
+        <div class="btn-next">
+            <button class="btn" type="submit">
+                <i class="fa-solid fa-cake-candles"></i>&nbsp;&nbsp;Create Card
+            </button>
+        </div>
+    </form>
+</div>
