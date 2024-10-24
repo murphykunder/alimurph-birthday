@@ -23,7 +23,7 @@ export class BirthdayFormComponent implements OnInit{
   public birthdayForm!: FormGroup;
   public messageCharacterCount: number = 0;
   public messageMinLength: number = 8;
-  public messageMaxLength: number = 1500;
+  public messageMaxLength: number = 1000;
   public modalService = inject(NgbModal);
 
   constructor(
@@ -54,7 +54,7 @@ export class BirthdayFormComponent implements OnInit{
 
   createCard(){
     if(this.birthdayForm.valid){
-      const encryptedData = this.encryptionService.encryptData(JSON.stringify(this.birthdayForm.value));
+      const encryptedData = this.encryptionService.encryptData(this.birthdayForm.value);
       if(encryptedData){
         const cardUrl = window.location.protocol + "//" + window.location.host + "/" + encryptedData;
         const modalRef = this.modalService.open(ModalContentComponent, { centered: true });

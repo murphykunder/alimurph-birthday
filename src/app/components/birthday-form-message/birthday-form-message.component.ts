@@ -24,12 +24,12 @@ export class BirthdayFormMessageComponent {
 
   public config = {
       toolbar: [ 'undo', 'redo', '|', 'bold', 'italic',
-        'alignment','fontBackgroundColor', 'fontColor', 'fontSize',
+        'alignment','fontBackgroundColor', 'fontColor',
         'heading', 'link'
        ],
       plugins: [
           Bold, Essentials, Italic, Paragraph, Undo,
-          Alignment, FontBackgroundColor, FontColor, FontFamily, FontSize,
+          Alignment, FontBackgroundColor, FontColor, FontFamily,
           Heading, Link, WordCount
       ],
       wordCount: {

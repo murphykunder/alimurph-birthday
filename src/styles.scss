@@ -44,6 +44,25 @@ html, body {
     -webkit-font-smoothing: antialiased;
 }
 
+.btn {
+    background-color: var(--global-secondary-color);
+    padding: 0.3em 1em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--global-font-size);
+    font-family: var(--global-font-family);
+    border: 1px dashed var(--global-secondary-color) !important;
+}
+
+.btn:hover:enabled, .btn:focus:enabled {
+    background-color: transparent;
+    color: var(--global-secondary-color);
+}
+
+
 @media (min-width:768px){
     :root {
         --global-font-size: 1em;

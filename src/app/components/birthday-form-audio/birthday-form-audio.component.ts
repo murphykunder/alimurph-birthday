@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import WaveSurfer from 'wavesurfer.js';
+import { AudioService } from '../../services/audio.service';
 
 @Component({
   selector: 'app-birthday-form-audio',
@@ -15,33 +16,16 @@ export class BirthdayFormAudioComponent implements AfterViewInit{
   @Input() birthdayForm!: FormGroup;
   @Output() onNext = new EventEmitter();
   wavesurfer: WaveSurfer[] = [];
-  audioList = [
-    {
-      name: 'Piano 1',
-      url: '../../../assets/audio/1.mp3'
-    },
-    {
-      name: 'Piano 2',
-      url: '../../../assets/audio/2.mp3'
-    },
-    {
-      name: 'Acoustic',
-      url: '../../../assets/audio/3.mp3'
-    },
-    {
-      name: 'Jazz',
-      url: '../../../assets/audio/4.mp3'
-    }
-  ];
 
   constructor(
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private audioService: AudioService
   ){}
 
   ngAfterViewInit(): void {
     // for each audio create a wavesurfer object
-    Object.keys(this.audioList).forEach((key: any) => {
-      this.wavesurfer.push(this.createWavesurfer('#waveform'+(key), this.audioList[key].url));
+    Object.keys(this.audioService.getAllAudios()).forEach((key: any) => {
+      this.wavesurfer.push(this.createWavesurfer('#waveform'+(key), this.audioService.getAudio(key)?.url));
     });
     this.cdr.detectChanges(); // add this line to manually detect the changes in the html view for play pause button after wavesurfer is created
   }
@@ -81,6 +65,10 @@ export class BirthdayFormAudioComponent implements AfterViewInit{
 
   isChecked(key: number){
     return (this.birthdayForm?.get('audio')?.value == key);
+  }
+
+  get audioList(){
+    return this.audioService.getAllAudios();
   }
 
   onSubmit(){

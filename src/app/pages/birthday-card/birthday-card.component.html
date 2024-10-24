@@ -1,1 +1,30 @@
-<p>birthday-card works!</p>
+<div class="birthday-card-container">
+    <div class="envelope-wrapper">
+        <div class="envelope-label">
+            <p>From:<br>{{senderName}}</p>
+            <div class="post-stamp">
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+        </div>
+        <div class="lid one" [class.open]="envelopeOpen"></div>
+        <div class="lid two" [class.open]="envelopeOpen"></div>
+        <div class="envelope"></div>
+        <div class="letter" [class.open]="envelopeOpen">
+            <app-birthday-letter [isEnvelopeOpen]="envelopeOpen" [birthdayPersonName]="birthdayPersonName" [birthdayMessage]="birthdayMessage"/>
+        </div>
+        <button type="button" class="btn-open-envelope"
+            [class.play]="!envelopeOpen"
+            (click)="openEnvelope()"
+            placement="bottom"
+            ngbTooltip="Click me!"
+            tooltipClass="btn-open-envelope-tooltip"
+            triggers="hover"
+        >
+            <i class="fa-solid fa-certificate"></i>
+        </button>
+    </div>
+    <div class="footer">
+        <img src="../../../assets/images/logo.jpg">
+        <p>&copy; Alisha Kunder 2024</p>
+    </div>
+</div>

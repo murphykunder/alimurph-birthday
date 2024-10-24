@@ -110,24 +110,6 @@
     color: var(--global-tertiary-color);
 }
 
-.btn {
-    background-color: var(--global-secondary-color);
-    padding: 0.3em 1em;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--global-font-size);
-    font-family: var(--global-font-family);
-    border: 1px dashed var(--global-secondary-color) !important;
-}
-
-.btn:hover:enabled, .btn:focus:enabled {
-    background-color: transparent;
-    color: var(--global-secondary-color);
-}
-
 .btn-next {
     display: flex;
     justify-content: end;

@@ -1,0 +1,131 @@
+.birthday-cake {
+    width: 200px;
+    height: 180px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    margin: auto;
+    position: absolute;
+}
+
+.holder {
+    width: 100%;
+    height: 10px;
+    background-color: #1d0e2c;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cake {
+    width: 160px;
+    height: 90px;
+    background-color: #fad7a0;
+    border-radius: 15px 15px 0 0;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.cake::before {
+    content:'';
+    position: absolute;
+    background-color: #935116; // add the first cake strip
+    width: 160px;
+    height: 8px;
+    top: 58px;
+    box-shadow: 0 16px #935116; // add the second cake strip
+}
+
+// cake top dark chocolate
+.cake::after {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 160px;
+    background-color: #573612;
+}
+
+// chocolate drips
+.chocolate {
+    background-color: #573612;
+    width: 15px;
+    height: 30px;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    box-shadow: 15px 3px #fad7a0, 30px -5px #573612, 45px 0px #fad7a0, 60px -2px #573612, 75px 4px #fad7a0,
+    90px -8px #573612, 105px 2px #fad7a0, 120px 2px #573612, 135px 2px #fad7a0, 150px -8px #573612;
+}
+
+.candle {
+    width: 6px;
+    height: 40px;
+    margin: auto;
+    position: relative;
+    background-color: #fff;
+}
+
+// candle strips
+.candle::before {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 5px;
+    background-color: red;
+    top: 5px;
+    box-shadow: 0px 10px red, 0px 20px red, 0px 30px red ;
+}
+
+// flame stick
+.candle::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    top: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000;
+}
+
+.flame {
+    position: absolute;
+    background-color: #f4d03f;
+    opacity: 0.9;
+    box-shadow: inset -1px -5px 2px #d35400, 3px -8px 15px #f6da73, 2px -5px 20px #fbffa3;
+    background-color: #f4d03f;
+    width: 10px;
+    height: 18px;
+    top: -22px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: flame 0.5s infinite /* burning flame*/, flame-off 1s 10s ease-in-out forwards /* turn off flame */;
+}
+
+@keyframes flame {
+    from, to {
+        transform: scale(1,1);
+    }
+    25% {
+        transform: scale(0.9, 1.1);
+    }
+    50% {
+        transform: scale(1.1, 0.9);
+    }
+    75% {
+        transform: scale(0.95, 1.05);
+    }
+}
+
+@keyframes flame-off {
+    from {
+        transform: scale(1,1);
+    }
+    to {
+        transform: scale(0,1.5);
+    }
+}

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
+import { BirthdayRequestResponse } from '../model/birthday-request-response.model';
 
 const secretKey = 'nL+ZX1QMPe03UNyRMmvkxs0Qgaj3ESk84xZ1CYRQphE=';
 
@@ -10,15 +11,20 @@ export class EncryptionService {
 
   constructor() { }
 
-  encryptData(data:string){
-    let b64EncryptedData = CryptoJS.AES.encrypt(data,secretKey).toString();
-    // the encrypted text could have special chars like /=+, since we need to pass CardID in url we use encodeURIComponent to make it URL friendly
+  encryptData(request: BirthdayRequestResponse){
+    let b64EncryptedData = CryptoJS.AES.encrypt(JSON.stringify(request),secretKey).toString();
     return encodeURIComponent(b64EncryptedData);
   }
 
-  decryptData(data:string){
+  decryptData(data:string): BirthdayRequestResponse | undefined{
     let decodedText = decodeURIComponent(data);
-    const decryptData = CryptoJS.AES.decrypt(decodedText, secretKey);
-    return decryptData.toString(CryptoJS.enc.Utf8);
+    const decryptDataArray = CryptoJS.AES.decrypt(decodedText, secretKey);
+    const decryptData = decryptDataArray.toString(CryptoJS.enc.Utf8);
+    if(decryptData){
+      return JSON.parse(decryptData);
+    }
+    else {
+      return undefined;
+    }
   }
 }

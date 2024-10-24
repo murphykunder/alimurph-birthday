@@ -9,12 +9,12 @@ form .audio-group {
 }
 
 .label-audio {
-    border: 1px solid #3b47ab;
+    border: 1px solid #1d2271;
     border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: #3a42c4;
     padding: 0.8em;
-    background-color: #5262e7;
-    color: #fff;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 .label-audio:hover{
@@ -62,7 +62,7 @@ form .audio-group {
 @media (min-width:768px) {
 
     .btn-waveform button {
-        padding: 0.3em 1em;
+        padding: 0.3em 1.5em;
     }
 
     .birthday-form-audio {
