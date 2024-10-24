@@ -48,7 +48,7 @@ export class BirthdayCardComponent {
   openEnvelope(){
     this.envelopeOpen = true;
     if(this.birthdayData && this.birthdayData.audio){
-      this.audioService.playAudio(this.birthdayData.audio, 3000);
+      this.audioService.playAudio(this.birthdayData.audio, 4500);
       this.confettiService.celebrate();
     }
   }

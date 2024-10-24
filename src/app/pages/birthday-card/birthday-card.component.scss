@@ -189,7 +189,7 @@ app-birthday-letter {
     color: #d74a49;
     border: none;
     background-color: transparent;
-    box-shadow: 0 2px 8px #feffcf;  //glow
+    box-shadow: 0 2px 10px #feffcf;  //glow
 }
 /* animate the button glow until the envelope is opened */
 .btn-open-envelope.play{
@@ -197,12 +197,10 @@ app-birthday-letter {
 }
 @keyframes btn-open-envelope-flick {
     0% {
-        // transform: scale(1)
-        box-shadow: 0 2px 8px #feffcf;
+        box-shadow: 0 2px 10px #feffcf;
     }
     50% {
-        // transform: scale(0.90);
-        box-shadow: 0 4px 20px #feffcf;
+        box-shadow: 0 4px 25px #feffcf;
     }
 }
 .btn-open-envelope-tooltip .tooltip-inner {
@@ -212,6 +210,10 @@ app-birthday-letter {
 }
 .btn-open-envelope-tooltip.bs-tooltip-bottom .tooltip-arrow::before {
     border-bottom-color: #fff;
+}
+
+.btn-open-envelope-tooltip {
+    display: none;
 }
 
 
@@ -230,7 +232,7 @@ app-birthday-letter {
     align-items: end;
 
     img {
-        width: 50px;
+        width: 60px;
         border-radius: 100%;
     }
 
@@ -239,6 +241,7 @@ app-birthday-letter {
         font-size: 0.7em;
         margin: 0;
         padding: 0 8px;
+        background-color: #fff;
     }
 }
 
@@ -256,4 +259,9 @@ app-birthday-letter {
             padding: 0 10px;
         }
     }
+
+    .btn-open-envelope-tooltip {
+        display: block;
+    }
+
 }
